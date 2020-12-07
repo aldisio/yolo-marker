@@ -1,14 +1,12 @@
 ## Yolo marker
 
-![screenshot](https://user-images.githubusercontent.com/19287934/67440616-3e601e00-f5d0-11e9-9804-7780635fbd51.png)
+![](screen.png?raw=true)
 
 ### Install virtualenv via pip:
 pip install virtualenv
 
 ### Test your installation
 virtualenv --version
-
-
 
 ### Create the virtualenv for the project
 cd yolo-marker\
@@ -24,6 +22,19 @@ pip install -r requirements.txt
 python3 marker.py -p \"PATH_WITH_IMGS/*EXTENSION\" -d WIDTH HEIGHT\
 Eg.:  python3 marker.py -p \"/Users/leandrobmarinho/img/\*.png\" -d 1920 1080
 
+### Instrunctions
+if the '0-9' key is pressed, class is setted
+
+if the 'A-Z' key is pressed, class is setted
+
+if the '+' key is pressed, next image is setted
+
+if the '-' key is pressed, previous image is setted
+
+if the '/' key is pressed, reset the cropping region
+
+if the '*' key is pressed, break from the loop
+
 #### If you are done working in the virtual environment for the moment, you can deactivate it:
 deactivate
 
@@ -31,11 +42,8 @@ deactivate
 ## .txt files for Yolo train
 
 ### Run the script to generate the txt files
-#### write_img_names - the images' path will be data/img
 python write_img_names.py -p \"PATH_WITH_IMGS/*EXTENSION\" -ptrain [0..1] [-v]\
 Eg1.: python write_img_names.py -p \"/Users/leandrobmarinho/img/\*.png\" -ptrain .95 -v\
 Eg2.: python write_img_names.py -p \"/Users/leandrobmarinho/img/\*.png\" -ptrain .95
 
-#### write_img_names_2 - the images' path will be the absolute path, and if there is not marked images, they will not be counted to the train and test files
-python write_img_names_2.py -p \"PATH_WITH_IMGS/*EXTENSION\" -ptrain [0..1] [-v]\
-Eg1.: python write_img_names_2.py -p \"/Users/leandrobmarinho/img/\*.png\" -ptrain .95 -v\
+
